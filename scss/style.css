@@ -1,0 +1,50 @@
+body {
+  background-color: black; }
+
+.container {
+  position: absolute;
+  margin: auto;
+  padding: 10px 100px 10px 50px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 40%;
+  min-width: 10%;
+  height: 60%;
+  min-height: 10%;
+  background-color: white;
+  border: 1px solid black; }
+
+.subContainer {
+  position: relative;
+  text-align: center;
+  height: 12%;
+  min-height: 5%;
+  width: 100%;
+  min-width: 20%;
+  margin: 5% auto;
+  border: #ccc 1px solid; }
+
+.progress-bar, .empty-fill, .full-fill, .footer {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  min-height: 10%;
+  margin-bottom: 2%; }
+
+.empty-fill {
+  background-color: #AFD7E6; }
+
+.full-fill {
+  background-color: red; }
+
+.progress-label {
+  position: absolute;
+  margin-top: 2%; }
+
+.footer {
+  width: 100%;
+  height: 100%; }
+
+/*# sourceMappingURL=style.scss.map */

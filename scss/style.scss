@@ -1,0 +1,68 @@
+//variables for colors
+$background-color: black;
+$container-color: white;
+$progress-bar-filling: #AFD7E6;
+$progress-bar-filled: red;
+$subContainer-border: #ccc;
+
+body{
+  background-color: $background-color;
+}
+
+//window pane holding all the views
+.container
+{
+  position: absolute;
+  margin: auto;
+  padding: 10px 100px 10px 50px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 40%;
+  min-width:10%;
+  height:60%;
+  min-height: 10%;
+  background-color: $container-color;
+  border: 1px solid $background-color;
+}
+
+.subContainer {
+  position:relative;
+  text-align: center;
+  height: 12%;
+  min-height:5%;
+  width: 100%;
+  min-width:20%;
+  margin: 5% auto;
+  border: $subContainer-border 1px solid;
+}
+
+.progress-bar{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  min-height:10%;
+  margin-bottom: 2%;
+}
+
+.empty-fill {
+  @extend .progress-bar;
+  background-color: $progress-bar-filling;
+}
+
+.full-fill {
+  @extend .progress-bar;
+  background-color: $progress-bar-filled;
+}
+
+.progress-label {
+  position: absolute;
+  margin-top: 2%;
+}
+
+.footer{
+  @extend .progress-bar;
+  width:100%;
+  height:100%;
+}

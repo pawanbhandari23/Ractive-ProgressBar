@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>Ractive ProgressBars</title>
+    <link rel="stylesheet" href="min/style.min.css" />
+</head>
+<body>
+    <script id="template" type='text/ractive'>
+    <div class="container"> 
+        <h2>Progress Bars</h2>
+
+        <!--check value for each bar and fill color accordingly-->
+        {{#each progressbars}}
+        {{#if value<0}}
+        <div class="subContainer">
+        	<div class="empty-fill" style="width: 0%">
+            </div>
+            <span class="progress-label" >0%</span>
+        </div> 
+        {{/if}}
+        {{#if value< 100 && value>=0}} 
+        <div class="subContainer">
+        	<div class="empty-fill" style="width: {{value}}%">
+            </div>
+            <span class="progress-label">{{value}}%</span>
+        </div>            
+        {{/if}}
+        {{#if value>=100}}
+        <div class="subContainer">
+            <div class="full-fill" style="width: 100%">
+            </div>
+            <span class="progress-label">{{value}}%</span>
+        </div>
+        {{/if}} 
+        {{/each}}
+
+        <!--input for progress bars -->
+        <div class="footer">
+        <select value='{{selectedProgress}}'>
+        	{{#each progressbars :index}}
+            <option value='{{index}}'>{{name}}</option>
+        	{{/each}}
+    	</select> 
+
+        <!--increasing units buttons-->
+    	{{#each units}}
+            <button on-click='changeValue(this)'>{{this > 0 ? '+' : ''}}{{this}}
+            </button>
+            <span></span> 
+            {{/each}}
+       </div>
+       </div>
+    </script>
+    </div>
+    <script src='lib/ractive.min.js'></script>
+    <script src="min/app.min.js"></script>
+</body>
+
+</html>
